@@ -22,16 +22,13 @@ export function Sortable(props) {
     
   };
 
-   const DelayConstraint = {
-    delay:2000
-   
-  }
+ 
 
   return (
     <>
     
-    <Col md={4}>
-      <div className="map" ref={setNodeRef} style={style} {...attributes}  {...DelayConstraint}  {...listeners}>
+    <Col xs={6} md={4}>
+      <div className="map" ref={setNodeRef} style={style} {...attributes}   {...listeners}>
         <Card>
           <Card.Img src={props.title} />
 

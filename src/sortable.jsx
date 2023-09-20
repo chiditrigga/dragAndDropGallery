@@ -21,6 +21,10 @@ export function Sortable(props) {
 
   const [isLoading,setIsLoading] = useState(true)
 
+  const onLoad = () => {
+    setIsLoading(false)
+  };
+
   return (
     <>
       <Col xs={4} md={3}>
@@ -36,7 +40,7 @@ export function Sortable(props) {
           </Card>}
           
           <Card className={!isLoading && "d-none"}>
-          <Card.Img  onLoad={()=>setIsLoading(false)} src={props.title} />
+          <Card.Img  onLoad={onLoad} src={props.title} />
 
           
           </Card>

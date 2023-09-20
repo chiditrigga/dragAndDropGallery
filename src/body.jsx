@@ -81,7 +81,7 @@ const Body = () => {
            <h1 className="text-white text-center">Gallery Website</h1>
           <Form className="search mx-auto" onSubmit={(e) => e.preventDefault()}>
             <Form.Control
-              class="text-uppercase"
+              className="text-uppercase"
               onChange={(e) => setFilters(e.target.value)}
               value={filters}
               type="text"

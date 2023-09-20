@@ -1,5 +1,5 @@
 .map{
-  touch-action:manipulation !important;
+  touch-action:none !important;
   
 }
 

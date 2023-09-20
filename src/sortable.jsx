@@ -7,9 +7,12 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
+import { useState } from "react";
 export function Sortable(props) {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id: props.id });
+
+    const [isLoading,setIsLoading] = useState(false)
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -17,6 +20,8 @@ export function Sortable(props) {
   };
 
   return (
+    <>
+    {!Card.Img && "kjj" }
     <Col md={4}>
       <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
         <Card>
@@ -26,5 +31,5 @@ export function Sortable(props) {
         </Card>
       </div>
     </Col>
-  );
+ </> );
 }

@@ -18,9 +18,11 @@ export function Sortable(props) {
     transition,
   };
 
+  const [isLoading,setIsLoading] = useState(false)
+
   return (
     <>
-      <Col xs={4} md={4}>
+      <Col xs={4} md={3}>
         <div
           className="map"
           ref={setNodeRef}
@@ -29,7 +31,7 @@ export function Sortable(props) {
           {...listeners}
         >
           <Card>
-            <Card.Img src={props.title} />
+          {Card.Img? <Card.Img src={props.title} />: "loading"}   
 
             <Card.Footer className="ps-0">{props.tag}</Card.Footer>
           </Card>

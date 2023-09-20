@@ -85,7 +85,7 @@ const Body = () => {
               onChange={(e) => setFilters(e.target.value)}
               value={filters}
               type="text"
-              placeholder="Normal text"
+              placeholder="search category"
             />
           </Form>
           </Row>
@@ -96,24 +96,24 @@ const Body = () => {
        
       <Container>
         <Row className="py-3">
-        <div className="d-flex vw-100 scrol border-0 shadow-sm ">
-          <Col className="px-0 tag align-items-center d-flex" xs={3} md={2}>
-            CATEGORIES
+        <div className="d-flex  scrol border-0 shadow-sm ">
+          <Col className="pe-2 me-2 tag align-items-center d-flex" xs={3} md={2}>
+            CATEGORIES:
           </Col>
           <Col className="px-0 " xs={3} md={2}>
-            <Button className="tag">Nature</Button>
+            <Button className="tag w-100">Nature</Button>
           </Col>
           <Col className="px-0 " xs={3} md={2}>
-            <Button className="tag">Animal</Button>
+            <Button className="tag w-100">Animal</Button>
           </Col>
           <Col className="px-0 " xs={3} md={2}>
-            <Button className="tag">City</Button>
+            <Button className="tag w-100">City</Button>
           </Col>
           <Col className="px-0 " xs={3} md={2}>
-            <Button className="tag">Flower</Button>
+            <Button className="tag w-100">Flower</Button>
           </Col>
           <Col className="px-0 " xs={3} md={2}>
-            <Button className="tag">Art</Button>
+            <Button className="tag w-100">Art</Button>
           </Col>
                   </div>
         </Row>

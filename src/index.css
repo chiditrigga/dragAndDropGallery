@@ -2,6 +2,10 @@
   touch-action:none !important; 
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .img{
   background-image: url("./images/desk.jpg");
   height: 40vh;
@@ -12,11 +16,13 @@
   border-color:rgb(94, 88, 79);
   color: rgb(80, 74, 67);
   font-weight: 500;
+  
 }
 
 .tag:hover{
-  color: red;
-  border-color: red;
+  color: wheat !important;
+  border-color: rgb(94, 88, 79) !important;
+  background: rgb(94, 88, 79) !important;
 }
 
 
@@ -48,6 +54,9 @@
   .search{
     width: 70%;
 
+  }
+  .scrol{
+    width: 100vw !important;
   }
 
 }

@@ -33,14 +33,12 @@ export function Sortable(props) {
         >
           {isLoading? <Spinner animation="border" /> :  <Card>
           <Card.Img   src={props.title} />
-          
-            <Card.Footer className="ps-0">{props.tag}</Card.Footer>
           </Card>}
           
           <Card className={!isLoading && "d-none"}>
           <Card.Img  onLoad={()=>setIsLoading(false)} src={props.title} />
 
-            <Card.Footer className="ps-0">{props.tag}</Card.Footer>
+          
           </Card>
          
         </div>

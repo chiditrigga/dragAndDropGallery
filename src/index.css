@@ -2,3 +2,53 @@
   touch-action:none !important; 
 }
 
+.img{
+  background-image: url("./images/desk.jpg");
+  height: 40vh;
+}
+
+.tag{
+  background: white !important;
+  border-color:rgb(94, 88, 79);
+  color: rgb(80, 74, 67);
+  font-weight: 500;
+}
+
+.tag:hover{
+  color: red;
+  border-color: red;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .img{
+    background-image: url("./images/desk.jpg");
+    height: 20vh;
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  }
+  .scrol{
+    overflow-x:scroll !important;
+    
+  }
+  
+}
+
+@media screen and (min-width: 700px) {
+  .img{
+    background-image: url("./images/desk.jpg");
+    height: 40vh;
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  }
+
+  .search{
+    width: 70%;
+
+  }
+
+}
+

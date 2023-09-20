@@ -14,6 +14,7 @@ import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import { Sortable } from "./sortable";
 import Form from "react-bootstrap/Form";
+import "./index.css";
 
 import { DndContext, closestCenter } from "@dnd-kit/core";
 
@@ -69,20 +70,57 @@ const Body = () => {
 
   return (
     <>
-      <Form onSubmit={(e) => e.preventDefault()}>
-        <Form.Control
-          class="text-uppercase"
-          onChange={(e) => setFilters(e.target.value)}
-          value={filters}
-          type="text"
-          placeholder="Normal text"
-        />
-      </Form>
+      <Container fluid className="px-0"> 
+        <div className="img ">
+          <Row className="py-3 text-white">
+            <Col xs={6}>Home</Col>
+            <Col xs={6} className="text-end">sign up</Col>
+          </Row>
+            <Row className="align-items-center d-flex mx-auto h-50 w-100">
 
-      <DndContext collisionDetection={closestCenter} onDragEnd={handleDrag}>
-        <SortableContext items={list} strategy={rectSortingStrategy}>
-          <Container>
-            <Row>
+           <h1 className="text-white text-center">Gallery Website</h1>
+          <Form className="search mx-auto" onSubmit={(e) => e.preventDefault()}>
+            <Form.Control
+              class="text-uppercase"
+              onChange={(e) => setFilters(e.target.value)}
+              value={filters}
+              type="text"
+              placeholder="Normal text"
+            />
+          </Form>
+          </Row>
+        </div>
+      </Container>
+       
+
+       
+      <Container>
+        <Row className="py-3">
+        <div className="d-flex vw-100 scrol border-0 shadow-sm ">
+          <Col className="px-0 tag align-items-center d-flex" xs={3} md={2}>
+            CATEGORIES
+          </Col>
+          <Col className="px-0 " xs={3} md={2}>
+            <Button className="tag">Nature</Button>
+          </Col>
+          <Col className="px-0 " xs={3} md={2}>
+            <Button className="tag">Animal</Button>
+          </Col>
+          <Col className="px-0 " xs={3} md={2}>
+            <Button className="tag">City</Button>
+          </Col>
+          <Col className="px-0 " xs={3} md={2}>
+            <Button className="tag">Flower</Button>
+          </Col>
+          <Col className="px-0 " xs={3} md={2}>
+            <Button className="tag">Art</Button>
+          </Col>
+                  </div>
+        </Row>
+
+        <Row>
+          <DndContext collisionDetection={closestCenter} onDragEnd={handleDrag}>
+            <SortableContext items={list} strategy={rectSortingStrategy}>
               {handleFilter().length > 0
                 ? handleFilter().map((lis) => (
                     <Sortable
@@ -93,10 +131,10 @@ const Body = () => {
                     />
                   ))
                 : "not found"}
-            </Row>
-          </Container>
-        </SortableContext>
-      </DndContext>
+            </SortableContext>
+          </DndContext>
+        </Row>
+      </Container>
     </>
   );
 };

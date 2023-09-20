@@ -18,24 +18,32 @@ export function Sortable(props) {
     transition,
   };
 
-  const [isLoading,setIsLoading] = useState(false)
+  const [isLoading,setIsLoading] = useState(true)
 
   return (
     <>
       <Col xs={4} md={3}>
-        <div
+         <div
           className="map"
           ref={setNodeRef}
           style={style}
           {...attributes}
           {...listeners}
         >
-          <Card>
-          {Card.Img? <Card.Img src={props.title} />: "loading"}   
+          {isLoading? "none" :  <Card>
+          <Card.Img   src={props.title} />
+
+            <Card.Footer className="ps-0">{props.tag}</Card.Footer>
+          </Card>}
+          
+          <Card className={!isLoading && "d-none"}>
+          <Card.Img  onLoad={()=>setIsLoading(false)} src={props.title} />
 
             <Card.Footer className="ps-0">{props.tag}</Card.Footer>
           </Card>
+         
         </div>
+       
       </Col>
     </>
   );

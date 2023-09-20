@@ -8,22 +8,25 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import { useState } from "react";
+import './index.css'
 export function Sortable(props) {
-  const { attributes, listeners, setNodeRef, transform, transition } =
+  const { attributes, listeners, setNodeRef, transform, transition} =
     useSortable({ id: props.id });
 
-    const [isLoading,setIsLoading] = useState(false)
+    
 
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
+    
+    
   };
 
   return (
     <>
-    {!Card.Img && "kjj" }
+    
     <Col md={4}>
-      <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
+      <div className="map" ref={setNodeRef} style={style} {...attributes}    {...listeners}>
         <Card>
           <Card.Img src={props.title} />
 

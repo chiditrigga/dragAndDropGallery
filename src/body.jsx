@@ -7,7 +7,6 @@ import nature2 from "./images/nature2.jpg";
 import city from "./images/city.jpg";
 import flower from "./images/flower.jpg";
 
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
@@ -17,7 +16,6 @@ import Image from "react-bootstrap/Image";
 import { Sortable } from "./sortable";
 import Form from "react-bootstrap/Form";
 import "./index.css";
-
 
 import { DndContext, closestCenter } from "@dnd-kit/core";
 
@@ -73,59 +71,76 @@ const Body = () => {
 
   return (
     <>
-      <Container fluid className="px-0"> 
+      <Container fluid className="px-0">
         <div className="img ">
           <Row className="py-3 text-white">
             <Col xs={6}>Home</Col>
-            <Col xs={6} className="text-end">sign up</Col>
+            <Col xs={6} className="text-end">
+              sign up
+            </Col>
           </Row>
-            <Row className="align-items-center d-flex mx-auto h-50 w-100">
-    
-        <h1 className="text-white text-center">Gallery Website</h1>
-       
-          
-        
-           <Form className="search mx-auto" onSubmit={(e) => e.preventDefault()}>
-            <Form.Control
-              className="text-uppercase"
-              onChange={(e) => setFilters(e.target.value)}
-              value={filters}
-              type="text"
-              placeholder="search category"
-            />
-          </Form> 
-        
-         
-        
+          <Row className="align-items-center d-flex mx-auto h-50 w-100">
+            <h1 className="text-white text-center">Gallery Website</h1>
+
+            <Form
+              className="search mx-auto"
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <Form.Control
+                className="text-uppercase"
+                onChange={(e) => setFilters(e.target.value)}
+                value={filters}
+                type="text"
+                placeholder="search category"
+              />
+            </Form>
           </Row>
         </div>
       </Container>
-       
 
-       
       <Container>
         <Row className="py-3">
-        <div className="d-flex  scrol border-0 shadow-sm ">
-          
-          <Col className="px-0 " xs={3} md={2}>
-            <Button onClick={() => setFilters("")} className="tag w-100">ALL</Button>
-          </Col>
-          <Col className="px-0 " xs={3} md={2}>
-            <Button onClick={() => setFilters("nature")} className="tag w-100">Nature</Button>
-          </Col>
-          <Col className="px-0 " xs={3} md={2}>
-            <Button  onClick={() => setFilters("animal")} className="tag w-100">Animal</Button>
-          </Col>
-          <Col className="px-0 " xs={3} md={2}>
-            <Button onClick={() => setFilters("city")} className="tag w-100">City</Button>
-          </Col>
-          <Col className="px-0 " xs={3} md={2}>
-            <Button onClick={() => setFilters("flower")} className="tag w-100">Flower</Button>
-          </Col>
-          <Col className="px-0 " xs={3} md={2}>
-            <Button onClick={() => setFilters("art")} className="tag w-100">Art</Button>
-          </Col>
-                  </div>
+          <div className="d-flex  scrol border-0 shadow-sm ">
+            <Col className="px-0 " xs={3} md={2}>
+              <Button onClick={() => setFilters("")} className="tag w-100">
+                ALL
+              </Button>
+            </Col>
+            <Col className="px-0 " xs={3} md={2}>
+              <Button
+                onClick={() => setFilters("nature")}
+                className="tag w-100"
+              >
+                Nature
+              </Button>
+            </Col>
+            <Col className="px-0 " xs={3} md={2}>
+              <Button
+                onClick={() => setFilters("animal")}
+                className="tag w-100"
+              >
+                Animal
+              </Button>
+            </Col>
+            <Col className="px-0 " xs={3} md={2}>
+              <Button onClick={() => setFilters("city")} className="tag w-100">
+                City
+              </Button>
+            </Col>
+            <Col className="px-0 " xs={3} md={2}>
+              <Button
+                onClick={() => setFilters("flower")}
+                className="tag w-100"
+              >
+                Flower
+              </Button>
+            </Col>
+            <Col className="px-0 " xs={3} md={2}>
+              <Button onClick={() => setFilters("art")} className="tag w-100">
+                Art
+              </Button>
+            </Col>
+          </div>
         </Row>
 
         <Row>

@@ -9,34 +9,24 @@ import Desk from "./images/deskImage.jpg";
 import Form from "react-bootstrap/Form";
 import "./index.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-
-import { useNavigate, useLocation } from "react-router-dom";
-
-const Login = () => {
+const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
-  const location = useLocation();
+
+  const signin = () => {
+    navigate("/");
+  };
+
   const auth = getAuth();
 
-  const signup = () => {
-    navigate("/signup");
-  };
-
-  const handleLogin = async (e) => {
+  async function handleSignUp(e) {
     e.preventDefault();
-  };
-
-  async function handleSignIn(e) {
-    e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((user) => {
-        console.log(user);
-        navigate("/images");
-      })
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((user) => console.log(user))
       .catch((error) => console.log(error));
   }
 
@@ -53,10 +43,10 @@ const Login = () => {
           </Col>
           <Col xs={12} md={6} className="vh-100  align-items-center d-flex">
             <Form
-              onSubmit={(e) => handleSignIn(e)}
+              onSubmit={(e) => handleSignUp(e)}
               className="mx-auto w-75 form"
             >
-              <h1 className="text-center">Log in</h1>
+              <h1 className="text-center">signup</h1>
               <Form.Group className="mb-3" controlId="formGroupEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
@@ -79,10 +69,10 @@ const Login = () => {
               </Form.Group>
               <div className="text-center">
                 <Button variant="primary" type="submit">
-                  login
+                  Submit
                 </Button>
-                <Button variant="primary" onClick={signup}>
-                  sign up
+                <Button variant="primary" onClick={signin}>
+                  sign in
                 </Button>
               </div>
             </Form>
@@ -93,4 +83,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

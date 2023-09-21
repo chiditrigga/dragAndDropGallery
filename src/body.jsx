@@ -22,8 +22,7 @@ import { DndContext, closestCenter } from "@dnd-kit/core";
 import {
   arrayMove,
   SortableContext,
-  horizontalListSortingStrategy,
-  verticalListSortingStrategy,
+ 
   rectSortingStrategy,
 } from "@dnd-kit/sortable";
 
@@ -73,12 +72,7 @@ const Body = () => {
     <>
       <Container fluid className="px-0">
         <div className="img ">
-          <Row className="py-3 text-white">
-            <Col xs={6}>Home</Col>
-            <Col xs={6} className="text-end">
-              sign up
-            </Col>
-          </Row>
+         
           <Row className="align-items-center d-flex mx-auto h-50 w-100">
             <h1 className="text-white text-center">Gallery Website</h1>
 

@@ -15,6 +15,8 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errpassword, setErrPassword] = useState(false);
+
   const navigate = useNavigate();
 
   const signin = () => {
@@ -22,12 +24,12 @@ const Signup = () => {
   };
 
   const auth = getAuth();
-
+const [error,setError] = useState(null)
   async function handleSignUp(e) {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then((user) => console.log(user))
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error));
   }
 
   return (
@@ -61,20 +63,25 @@ const Signup = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => {
+                    setPassword(e.target.value) 
+                    setErrPassword(true)}}
                   required
                   type="password"
                   placeholder="Password"
                 />
               </Form.Group>
+              {errpassword && password.length < 6 && password.length !== 0?  <span className="text-danger">"password must contain 6 characters"</span> : null}
               <div className="text-center">
+             
                 <Button variant="primary" type="submit">
                   Submit
                 </Button>
                 <Button variant="primary" onClick={signin}>
                   sign in
                 </Button>
-              </div>
+               
+              </div> 
             </Form>
           </Col>
         </Row>

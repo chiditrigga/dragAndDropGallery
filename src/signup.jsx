@@ -74,9 +74,11 @@ const [error,setError] = useState(null)
               {errpassword && password.length < 6 && password.length !== 0?  <span className="text-danger">"password must contain 6 characters"</span> : null}
               <div className="text-center">
              
-                <Button variant="primary" type="submit">
+                <Button className="mb-3" variant="primary" type="submit">
                   Submit
                 </Button>
+                <br />
+                <p className="mb-0">Already have an account? </p>
                 <Button variant="primary" onClick={signin}>
                   sign in
                 </Button>

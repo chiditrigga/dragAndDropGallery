@@ -17,18 +17,15 @@ import { useNavigate, useLocation } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState()
   const navigate = useNavigate();
-  const location = useLocation();
   const auth = getAuth();
 
   const signup = () => {
     navigate("/signup");
   };
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-  };
+ 
 
   async function handleSignIn(e) {
     e.preventDefault();
@@ -78,10 +75,12 @@ const Login = () => {
                 />
               </Form.Group>
               <div className="text-center">
-                <Button variant="primary" type="submit">
+                <Button className="mb-3" variant="primary" type="submit">
                   login
                 </Button>
-                <Button variant="primary" onClick={signup}>
+                <br />
+                <p className="mb-0">don't have an account? </p>
+                <Button className="pt-0" variant="primary" onClick={signup}>
                   sign up
                 </Button>
               </div>

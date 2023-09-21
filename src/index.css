@@ -1,5 +1,6 @@
 .map{
   touch-action:none !important; 
+  
 }
 
 body{
@@ -39,6 +40,10 @@ body{
     overflow-x:scroll !important;
     
   }
+
+   .img2{
+    height: 100px !important;
+  } 
   
 }
 
@@ -58,6 +63,10 @@ body{
   .scrol{
     width: 100vw !important;
   }
+   .img2{
+    height:  150px !important;
+    
+  } 
 
 }
 

@@ -97,23 +97,24 @@ const Body = () => {
       <Container>
         <Row className="py-3">
         <div className="d-flex  scrol border-0 shadow-sm ">
-          <Col className="pe-2 me-2 tag align-items-center d-flex" xs={3} md={2}>
-            CATEGORIES:
+          
+          <Col className="px-0 " xs={3} md={2}>
+            <Button onClick={() => setFilters("")} className="tag w-100">ALL</Button>
           </Col>
           <Col className="px-0 " xs={3} md={2}>
-            <Button className="tag w-100">Nature</Button>
+            <Button onClick={() => setFilters("nature")} className="tag w-100">Nature</Button>
           </Col>
           <Col className="px-0 " xs={3} md={2}>
-            <Button className="tag w-100">Animal</Button>
+            <Button  onClick={() => setFilters("animal")} className="tag w-100">Animal</Button>
           </Col>
           <Col className="px-0 " xs={3} md={2}>
-            <Button className="tag w-100">City</Button>
+            <Button onClick={() => setFilters("city")} className="tag w-100">City</Button>
           </Col>
           <Col className="px-0 " xs={3} md={2}>
-            <Button className="tag w-100">Flower</Button>
+            <Button onClick={() => setFilters("flower")} className="tag w-100">Flower</Button>
           </Col>
           <Col className="px-0 " xs={3} md={2}>
-            <Button className="tag w-100">Art</Button>
+            <Button onClick={() => setFilters("art")} className="tag w-100">Art</Button>
           </Col>
                   </div>
         </Row>

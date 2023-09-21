@@ -27,16 +27,22 @@ export function Sortable(props) {
 
   return (
     <>
-      <Col xs={4} md={3}>
+      
+      <Col xs={4} md={3} className="mx-0">
          <div
-          className="map"
+          className="map mx-0 w-100"
           ref={setNodeRef}
           style={style}
           {...attributes}
           {...listeners}
         >
-          {isLoading? <Spinner animation="border" /> :  <Card>
-          <Card.Img   src={props.title} />
+          {isLoading? <Spinner animation="border" /> :  <Card className="w-100">
+          <Card.Img className="img2" fluid   src={props.title} />
+          <Card.ImgOverlay>
+       
+      
+        <Card.Text className="text-white align-items-end h-100 d-flex">{props.tag}</Card.Text>
+      </Card.ImgOverlay>
           </Card>}
           
           <Card className={!isLoading && "d-none"}>

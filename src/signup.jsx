@@ -35,6 +35,7 @@ const [error,setError] = useState(null)
       .catch((error) => setError(error.message));
       setEmail("")
       setPassword("")
+      setError('')
   }
 
   return (

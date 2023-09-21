@@ -40,6 +40,7 @@ const Login = () => {
       .catch((error) => setErrorMessage(error.message));
    setEmail("")
    setPassword("")
+   setErrorMessage("")
     
   }
 

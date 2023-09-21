@@ -7,14 +7,17 @@ import nature2 from "./images/nature2.jpg";
 import city from "./images/city.jpg";
 import flower from "./images/flower.jpg";
 
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
+import Image from "react-bootstrap/Image";
 import { Sortable } from "./sortable";
 import Form from "react-bootstrap/Form";
 import "./index.css";
+
 
 import { DndContext, closestCenter } from "@dnd-kit/core";
 
@@ -77,9 +80,12 @@ const Body = () => {
             <Col xs={6} className="text-end">sign up</Col>
           </Row>
             <Row className="align-items-center d-flex mx-auto h-50 w-100">
-
-           <h1 className="text-white text-center">Gallery Website</h1>
-          <Form className="search mx-auto" onSubmit={(e) => e.preventDefault()}>
+    
+        <h1 className="text-white text-center">Gallery Website</h1>
+       
+          
+        
+           <Form className="search mx-auto" onSubmit={(e) => e.preventDefault()}>
             <Form.Control
               className="text-uppercase"
               onChange={(e) => setFilters(e.target.value)}
@@ -87,7 +93,10 @@ const Body = () => {
               type="text"
               placeholder="search category"
             />
-          </Form>
+          </Form> 
+        
+         
+        
           </Row>
         </div>
       </Container>

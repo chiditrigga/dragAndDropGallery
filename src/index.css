@@ -44,6 +44,13 @@ body{
    .img2{
     height: 100px !important;
   } 
+
+  .form{
+    width: 80vw !important;
+  }
+  .spinner{
+    height: 100px !important;
+  }
   
 }
 
@@ -67,6 +74,9 @@ body{
     height:  150px !important;
     
   } 
+  .spinner{
+    height: 150px !important;
+  }
 
 }
 

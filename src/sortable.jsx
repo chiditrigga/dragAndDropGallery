@@ -36,7 +36,7 @@ export function Sortable(props) {
           {...attributes}
           {...listeners}
         >
-          {isLoading? <Spinner animation="border" /> :  <Card className="w-100">
+          {isLoading?<div className="d-flex align-items-center justify-content-center" style={{height:"150px"}}><Spinner  animation="border" /> </div> :  <Card className="w-100">
           <Card.Img className="img2" fluid   src={props.title} />
           <Card.ImgOverlay>
        

@@ -38,7 +38,8 @@ const Login = () => {
         navigate("/images");
       })
       .catch((error) => setErrorMessage(error.message));
-
+   setEmail("")
+   setPassword("")
     
   }
 

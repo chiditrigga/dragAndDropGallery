@@ -33,6 +33,8 @@ const [error,setError] = useState(null)
     createUserWithEmailAndPassword(auth, email, password)
       .then((user) => console.log(user))
       .catch((error) => setError(error.message));
+      setEmail("")
+      setPassword("")
   }
 
   return (

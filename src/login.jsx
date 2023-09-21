@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import Desk from "./images/deskImage.jpg";
+import Alert from 'react-bootstrap/Alert';
 
 import Form from "react-bootstrap/Form";
 import "./index.css";
@@ -21,6 +22,8 @@ const Login = () => {
   const navigate = useNavigate();
   const auth = getAuth();
 
+  const [show, setShow] = useState(true);
+
   const signup = () => {
     navigate("/signup");
   };
@@ -34,11 +37,17 @@ const Login = () => {
         console.log(user);
         navigate("/images");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setErrorMessage(error.message));
+
+    
   }
 
   return (
     <>
+   
+  {errorMessage &&  <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+     {errorMessage}
+      </Alert> } 
       <Container fluid>
         <Row>
           <Col xs={12} md={6} className="px-0">

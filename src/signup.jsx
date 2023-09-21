@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import Desk from "./images/deskImage.jpg";
+import Alert from 'react-bootstrap/Alert';
 
 import Form from "react-bootstrap/Form";
 import "./index.css";
@@ -23,17 +24,22 @@ const Signup = () => {
     navigate("/");
   };
 
+  const [show, setShow] = useState(true);
+
   const auth = getAuth();
 const [error,setError] = useState(null)
   async function handleSignUp(e) {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then((user) => console.log(user))
-      .catch((error) => setError(error));
+      .catch((error) => setError(error.message));
   }
 
   return (
     <>
+     {error &&  <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+     {error}
+      </Alert> } 
       <Container fluid>
         <Row>
           <Col xs={12} md={6} className="px-0">

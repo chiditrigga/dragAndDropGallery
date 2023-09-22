@@ -47,12 +47,18 @@ body{
 
   .form{
     width: 80vw !important;
+    font-family: 400 !important;
+    
   }
+ 
   .spinner{
     height: 100px !important;
   }
   .btnn{
     width: 100% !important;
+    background: gray !important;
+    color: white !important;
+  
   }
   
 }
@@ -85,4 +91,8 @@ body{
 
 .btnn{
   width: 100% !important;
+}
+
+.form{
+  font-weight: 400 !important;
 }

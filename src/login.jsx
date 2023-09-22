@@ -91,12 +91,12 @@ const Login = () => {
                 />
               </Form.Group>
               <div className="text-center">
-                <Button   className="mb-3 btnn" variant="primary" type="submit">
+                <Button   className="mb-3 btnn p-2" variant="dark" type="submit">
               {fetching ? <Spinner animation="border" /> : "login"}    
                 </Button>
                 <br />
                 <p className="mb-0">don't have an account? </p>
-                <Button className="pt-0 " variant="primary" onClick={signup}>
+                <Button className="px-4 " variant="outline-danger" onClick={signup}>
                   sign up
                 </Button>
               </div>

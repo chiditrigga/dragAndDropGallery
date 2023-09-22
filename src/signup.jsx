@@ -60,7 +60,7 @@ const [error,setError] = useState(null)
               onSubmit={(e) => handleSignUp(e)}
               className="mx-auto w-75 form"
             >
-              <h1 className="text-center">signup</h1>
+              <h1 className="text-center">sign up</h1>
               <Form.Group className="mb-3" controlId="formGroupEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
@@ -86,12 +86,12 @@ const [error,setError] = useState(null)
               {errpassword && password.length < 6 && password.length !== 0?  <span className="text-danger">"password must contain 6 characters"</span> : null}
               <div className="text-center">
              
-                <Button className="mb-3 btnn" variant="primary" type="submit">
+                <Button className="mb-3 btnn p-2" variant="outline-secondary" type="submit">
               {fetching?  <Spinner animation="border" />: "signup"} 
                 </Button>
                 <br />
-                <p className="mb-0 btnn">Already have an account? </p>
-                <Button variant="primary" onClick={signin}>
+                <p className="mb-0">Already have an account? </p>
+                <Button className="px-4" variant="danger" onClick={signin}>
                   sign in
                 </Button>
                

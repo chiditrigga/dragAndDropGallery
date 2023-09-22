@@ -61,12 +61,7 @@ const Body = () => {
     });
   };
 
-  const handleFilter = (e) => {
-    if (filters === "") {
-      return list;
-    }
-    return list.filter((fil) => fil.tag === filters.toUpperCase());
-  };
+  
 
   return (
     <>
@@ -140,8 +135,13 @@ const Body = () => {
         <Row>
           <DndContext collisionDetection={closestCenter} onDragEnd={handleDrag}>
             <SortableContext items={list} strategy={rectSortingStrategy}>
-              {handleFilter().length > 0
-                ? handleFilter().map((lis) => (
+              { list.filter( (val)=> {
+                if (filters ==""){
+                  return val;
+                }else if(val.tag.toLowerCase().includes(filters.toLowerCase())){
+                     return val;
+                }
+              }).map((lis) => (
                     <Sortable
                       key={lis.id}
                       id={lis.id}
@@ -149,7 +149,7 @@ const Body = () => {
                       tag={lis.tag}
                     />
                   ))
-                : "not found"}
+                }
             </SortableContext>
           </DndContext>
         </Row>

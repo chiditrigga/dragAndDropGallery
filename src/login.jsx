@@ -59,10 +59,10 @@ const Login = () => {
               src={Desk}
             />
           </Col>
-          <Col xs={12} md={6} className="vh-100  align-items-center d-flex">
+          <Col xs={12} md={6} className="vh-100  align-items-center d-flex ">
             <Form
               onSubmit={(e) => handleSignIn(e)}
-              className="mx-auto w-75 form"
+              className="mx-auto w-75 form "
             >
               <h1 className="text-center">Log in</h1>
               <Form.Group className="mb-3" controlId="formGroupEmail">

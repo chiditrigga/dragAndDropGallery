@@ -12,7 +12,6 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
-import Image from "react-bootstrap/Image";
 import { Sortable } from "./sortable";
 import Form from "react-bootstrap/Form";
 import "./index.css";

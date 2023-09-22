@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import Desk from "./images/deskImage.jpg";
 import Alert from 'react-bootstrap/Alert';
+import Spinner from 'react-bootstrap/Spinner';
 
 import Form from "react-bootstrap/Form";
 import "./index.css";
@@ -13,7 +14,7 @@ import { useState } from "react";
 
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -28,25 +29,29 @@ const Login = () => {
     navigate("/signup");
   };
 
+  const [fetching,setFetching] = useState(false)
  
 
   async function handleSignIn(e) {
+    setFetching(true)
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((user) => {
-        console.log(user);
+      console.log(user)
         navigate("/images");
+      
       })
-      .catch((error) => setErrorMessage(error.message));
+      .catch((error) => {if(error) {setFetching(false)} setErrorMessage(error.message)});
    setEmail("")
    setPassword("")
    setErrorMessage("")
+   
     
   }
 
   return (
     <>
-   
+     
   {errorMessage &&  <Alert variant="danger" onClose={() => setShow(false)} dismissible>
      {errorMessage}
       </Alert> } 
@@ -86,12 +91,12 @@ const Login = () => {
                 />
               </Form.Group>
               <div className="text-center">
-                <Button className="mb-3" variant="primary" type="submit">
-                  login
+                <Button   className="mb-3 btnn" variant="primary" type="submit">
+              {fetching ? <Spinner animation="border" /> : "login"}    
                 </Button>
                 <br />
                 <p className="mb-0">don't have an account? </p>
-                <Button className="pt-0" variant="primary" onClick={signup}>
+                <Button className="pt-0 " variant="primary" onClick={signup}>
                   sign up
                 </Button>
               </div>

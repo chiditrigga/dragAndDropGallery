@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import Desk from "./images/deskImage.jpg";
 import Alert from 'react-bootstrap/Alert';
+import Spinner from 'react-bootstrap/Spinner';
 
 import Form from "react-bootstrap/Form";
 import "./index.css";
@@ -25,14 +26,16 @@ const Signup = () => {
   };
 
   const [show, setShow] = useState(true);
+  const [fetching,setFetching] = useState(false)
 
   const auth = getAuth();
 const [error,setError] = useState(null)
   async function handleSignUp(e) {
+    setFetching(true)
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
-      .then((user) => console.log(user))
-      .catch((error) => setError(error.message));
+      .then((user) => navigate("/"))
+      .catch((error) => {if (error){setFetching(false)} setError(error.message)});
       setEmail("")
       setPassword("")
       setError('')
@@ -83,11 +86,11 @@ const [error,setError] = useState(null)
               {errpassword && password.length < 6 && password.length !== 0?  <span className="text-danger">"password must contain 6 characters"</span> : null}
               <div className="text-center">
              
-                <Button className="mb-3" variant="primary" type="submit">
-                  Submit
+                <Button className="mb-3 btnn" variant="primary" type="submit">
+              {fetching?  <Spinner animation="border" />: "signup"} 
                 </Button>
                 <br />
-                <p className="mb-0">Already have an account? </p>
+                <p className="mb-0 btnn">Already have an account? </p>
                 <Button variant="primary" onClick={signin}>
                   sign in
                 </Button>
